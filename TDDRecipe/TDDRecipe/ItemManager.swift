@@ -12,9 +12,11 @@ class ItemManager {
   private var items: [Item] = []
   var itemCount: Int { return items.count }
   
+  //기존에 없는 것만 추가하기
   func add(_ item: Item) {
-    
-    items.append(item)
+    if !items.contains(item) {
+      items.append(item)
+    }
   }
   
   func item(at index: Int) -> Item {
@@ -23,6 +25,10 @@ class ItemManager {
   
   func checkItem(at index: Int) {
     items.remove(at: index)
+  }
+  
+  func removeAll() {
+    items.removeAll()
   }
   
 }

@@ -39,7 +39,7 @@ class ItemTests: XCTestCase {
     XCTAssertEqual(item.timestamp, 0.0, "should set timestamp")
   }
   
-  //item 비교
+  //같은 item 비교
   func test_EqualItems_AreEqual() {
     let first = Item(url: "Foo")
     let second = Item(url: "Foo")
@@ -55,5 +55,30 @@ class ItemTests: XCTestCase {
     XCTAssertNotEqual(first, second)
   }
   
+  //title(옵셔널)이 있는 것과 nil은 다르다
+  func test_Items_WhenOneTitleIsNilAndTheOtherIsnt_AreNotEqual() {
+    var first = Item(url: "", title: "test")
+    var second = Item(url: "", title: nil)
+    
+    XCTAssertNotEqual(first, second)
+    
+    first = Item(url: "", title: nil)
+    second = Item(url: "", title: "test")
+    XCTAssertNotEqual(first, second)
+  }
   
+  //timastamp가 다르면 다르다
+  func test_Items_WhenTimestampsDiffer_AreNotEqual() {
+    let first = Item(url: "Foo", timestamp: 1.0)
+    let second = Item(url: "Foo", timestamp: 0.0)
+    
+    XCTAssertNotEqual(first, second)
+  }
+  
+  //url이 다르면 다르다
+  func test_Items_WhenURLsDiffer_AreNotEqual() {
+    let first = Item(url: "Foo")
+    let second = Item(url: "Bar")
+    XCTAssertNotEqual(first, second)
+  }
 }

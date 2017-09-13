@@ -62,4 +62,23 @@ class ItemManagerTests: XCTestCase {
     sut.checkItem(at: 0)
     XCTAssertEqual(sut.item(at: 0).url, "second.com")
   }
+  
+  //한번에 모두 삭제기능
+  func test_RemoveAll_ResultsInCountsBeZero() {
+    sut.add(Item(url: "test1.com"))
+    sut.add(Item(url: "test2.com"))
+    sut.checkItem(at: 0)
+    
+    XCTAssertEqual(sut.itemCount, 1)
+    
+    sut.removeAll()
+    XCTAssertEqual(sut.itemCount, 0)
+  }
+  
+  func test_Add_WhenItemIsAlreadyAdded_DoesNotIncreaseCount() {
+    sut.add(Item(url: "test.com"))
+    sut.add(Item(url: "test.com"))
+    
+    XCTAssertEqual(sut.itemCount, 1)
+  }
 }
