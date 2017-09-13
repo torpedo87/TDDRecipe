@@ -1,0 +1,6 @@
+framework module Pods_TDDRecipe {
+  umbrella header "Pods-TDDRecipe-umbrella.h"
+
+  export *
+  module * { export * }
+}
