@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     window = UIWindow(frame: UIScreen.main.bounds)
     
-    let listViewController = ListViewController()
-    listViewController.view.backgroundColor = UIColor.blue
-    window?.rootViewController = listViewController
+    let itemListViewController = ItemListViewController()
+    window?.rootViewController = itemListViewController
     window?.makeKeyAndVisible()
     
     return true

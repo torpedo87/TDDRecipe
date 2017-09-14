@@ -10,13 +10,15 @@
 		48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262E9E1F6683C9004B6F01 /* AppDelegate.swift */; };
 		48262EA61F6683C9004B6F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA51F6683C9004B6F01 /* Assets.xcassets */; };
 		48262EA91F6683C9004B6F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA71F6683C9004B6F01 /* LaunchScreen.storyboard */; };
-		48262EBF1F66857B004B6F01 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262EBE1F66857B004B6F01 /* ListViewController.swift */; };
 		4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC21F691B8300FE25B8 /* ToDoItemTests.swift */; };
 		4869DDC51F691C0400FE25B8 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC41F691C0400FE25B8 /* ToDoItem.swift */; };
 		4869DDC71F691EFE00FE25B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC61F691EFE00FE25B8 /* Location.swift */; };
 		4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC81F691FC500FE25B8 /* LocationTests.swift */; };
 		4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDCA1F6921FC00FE25B8 /* ItemManagerTests.swift */; };
 		4869DDCD1F6928E300FE25B8 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDCC1F6928E300FE25B8 /* ItemManager.swift */; };
+		4869DDD11F6A5E7900FE25B8 /* ItemListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */; };
+		4869DDD31F6A5E8900FE25B8 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */; };
+		4869DDD51F6A6EF200FE25B8 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */; };
 		97A30E099B651130A9636612 /* Pods_TDDRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */; };
 		B55FDF596FA6027C3DE2EB12 /* Pods_TDDRecipeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20D7129BA2C52900E3FC995 /* Pods_TDDRecipeTests.framework */; };
 /* End PBXBuildFile section */
@@ -41,13 +43,15 @@
 		48262EAA1F6683C9004B6F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48262EAF1F6683CA004B6F01 /* TDDRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48262EB51F6683CA004B6F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48262EBE1F66857B004B6F01 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		4869DDC21F691B8300FE25B8 /* ToDoItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTests.swift; sourceTree = "<group>"; };
 		4869DDC41F691C0400FE25B8 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		4869DDC61F691EFE00FE25B8 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4869DDC81F691FC500FE25B8 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		4869DDCA1F6921FC00FE25B8 /* ItemManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManagerTests.swift; sourceTree = "<group>"; };
 		4869DDCC1F6928E300FE25B8 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewControllerTests.swift; sourceTree = "<group>"; };
+		4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
 		629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDDRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		888BC648078B87376857867C /* Pods-TDDRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipeTests/Pods-TDDRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88B18E8C3ED2AE622856623E /* Pods-TDDRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipe/Pods-TDDRecipe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,12 +101,12 @@
 		48262E9D1F6683C9004B6F01 /* TDDRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				4869DDCE1F6A5E5600FE25B8 /* Controller */,
 				48262EC01F6688E9004B6F01 /* Model */,
 				48262E9E1F6683C9004B6F01 /* AppDelegate.swift */,
 				48262EA51F6683C9004B6F01 /* Assets.xcassets */,
 				48262EA71F6683C9004B6F01 /* LaunchScreen.storyboard */,
 				48262EAA1F6683C9004B6F01 /* Info.plist */,
-				48262EBE1F66857B004B6F01 /* ListViewController.swift */,
 			);
 			path = TDDRecipe;
 			sourceTree = "<group>";
@@ -110,6 +114,7 @@
 		48262EB21F6683CA004B6F01 /* TDDRecipeTests */ = {
 			isa = PBXGroup;
 			children = (
+				4869DDCF1F6A5E5E00FE25B8 /* Controller */,
 				48262EC11F6688FB004B6F01 /* Model */,
 				48262EB51F6683CA004B6F01 /* Info.plist */,
 			);
@@ -134,6 +139,23 @@
 				4869DDCA1F6921FC00FE25B8 /* ItemManagerTests.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		4869DDCE1F6A5E5600FE25B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */,
+				4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4869DDCF1F6A5E5E00FE25B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		8CE91B60D628F8FE84F0A76F /* Frameworks */ = {
@@ -317,9 +339,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TDDRecipe/Pods-TDDRecipe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,7 +375,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TDDRecipeTests/Pods-TDDRecipeTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-TDDRecipe-TDDRecipeTests/Pods-TDDRecipe-TDDRecipeTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -369,8 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48262EBF1F66857B004B6F01 /* ListViewController.swift in Sources */,
 				4869DDCD1F6928E300FE25B8 /* ItemManager.swift in Sources */,
+				4869DDD51F6A6EF200FE25B8 /* ItemListDataProvider.swift in Sources */,
+				4869DDD31F6A5E8900FE25B8 /* ItemListViewController.swift in Sources */,
 				48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */,
 				4869DDC71F691EFE00FE25B8 /* Location.swift in Sources */,
 				4869DDC51F691C0400FE25B8 /* ToDoItem.swift in Sources */,
@@ -384,6 +410,7 @@
 				4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */,
 				4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */,
 				4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */,
+				4869DDD11F6A5E7900FE25B8 /* ItemListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
