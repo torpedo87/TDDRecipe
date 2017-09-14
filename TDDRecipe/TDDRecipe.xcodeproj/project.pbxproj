@@ -11,10 +11,12 @@
 		48262EA61F6683C9004B6F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA51F6683C9004B6F01 /* Assets.xcassets */; };
 		48262EA91F6683C9004B6F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA71F6683C9004B6F01 /* LaunchScreen.storyboard */; };
 		48262EBF1F66857B004B6F01 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262EBE1F66857B004B6F01 /* ListViewController.swift */; };
-		48262EC91F668EB4004B6F01 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262EC81F668EB4004B6F01 /* ItemTests.swift */; };
-		48262ECB1F668F25004B6F01 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262ECA1F668F25004B6F01 /* Item.swift */; };
-		48262ECD1F67A2CF004B6F01 /* ItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262ECC1F67A2CF004B6F01 /* ItemManagerTests.swift */; };
-		48262ECF1F67A3A0004B6F01 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262ECE1F67A3A0004B6F01 /* ItemManager.swift */; };
+		4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC21F691B8300FE25B8 /* ToDoItemTests.swift */; };
+		4869DDC51F691C0400FE25B8 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC41F691C0400FE25B8 /* ToDoItem.swift */; };
+		4869DDC71F691EFE00FE25B8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC61F691EFE00FE25B8 /* Location.swift */; };
+		4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDC81F691FC500FE25B8 /* LocationTests.swift */; };
+		4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDCA1F6921FC00FE25B8 /* ItemManagerTests.swift */; };
+		4869DDCD1F6928E300FE25B8 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDCC1F6928E300FE25B8 /* ItemManager.swift */; };
 		97A30E099B651130A9636612 /* Pods_TDDRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */; };
 		B55FDF596FA6027C3DE2EB12 /* Pods_TDDRecipeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20D7129BA2C52900E3FC995 /* Pods_TDDRecipeTests.framework */; };
 /* End PBXBuildFile section */
@@ -40,10 +42,12 @@
 		48262EAF1F6683CA004B6F01 /* TDDRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48262EB51F6683CA004B6F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48262EBE1F66857B004B6F01 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		48262EC81F668EB4004B6F01 /* ItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
-		48262ECA1F668F25004B6F01 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		48262ECC1F67A2CF004B6F01 /* ItemManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManagerTests.swift; sourceTree = "<group>"; };
-		48262ECE1F67A3A0004B6F01 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		4869DDC21F691B8300FE25B8 /* ToDoItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTests.swift; sourceTree = "<group>"; };
+		4869DDC41F691C0400FE25B8 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		4869DDC61F691EFE00FE25B8 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4869DDC81F691FC500FE25B8 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		4869DDCA1F6921FC00FE25B8 /* ItemManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManagerTests.swift; sourceTree = "<group>"; };
+		4869DDCC1F6928E300FE25B8 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
 		629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDDRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		888BC648078B87376857867C /* Pods-TDDRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipeTests/Pods-TDDRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88B18E8C3ED2AE622856623E /* Pods-TDDRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipe/Pods-TDDRecipe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,8 +119,9 @@
 		48262EC01F6688E9004B6F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				48262ECA1F668F25004B6F01 /* Item.swift */,
-				48262ECE1F67A3A0004B6F01 /* ItemManager.swift */,
+				4869DDC41F691C0400FE25B8 /* ToDoItem.swift */,
+				4869DDC61F691EFE00FE25B8 /* Location.swift */,
+				4869DDCC1F6928E300FE25B8 /* ItemManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -124,8 +129,9 @@
 		48262EC11F6688FB004B6F01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				48262EC81F668EB4004B6F01 /* ItemTests.swift */,
-				48262ECC1F67A2CF004B6F01 /* ItemManagerTests.swift */,
+				4869DDC21F691B8300FE25B8 /* ToDoItemTests.swift */,
+				4869DDC81F691FC500FE25B8 /* LocationTests.swift */,
+				4869DDCA1F6921FC00FE25B8 /* ItemManagerTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -364,9 +370,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				48262EBF1F66857B004B6F01 /* ListViewController.swift in Sources */,
-				48262ECF1F67A3A0004B6F01 /* ItemManager.swift in Sources */,
+				4869DDCD1F6928E300FE25B8 /* ItemManager.swift in Sources */,
 				48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */,
-				48262ECB1F668F25004B6F01 /* Item.swift in Sources */,
+				4869DDC71F691EFE00FE25B8 /* Location.swift in Sources */,
+				4869DDC51F691C0400FE25B8 /* ToDoItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +381,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48262EC91F668EB4004B6F01 /* ItemTests.swift in Sources */,
-				48262ECD1F67A2CF004B6F01 /* ItemManagerTests.swift in Sources */,
+				4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */,
+				4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */,
+				4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +586,7 @@
 				48262EBA1F6683CA004B6F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48262EBB1F6683CA004B6F01 /* Build configuration list for PBXNativeTarget "TDDRecipeTests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +595,7 @@
 				48262EBD1F6683CA004B6F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,8 +1,8 @@
 //
-//  CardManagerTests.swift
+//  ItemManagerTests.swift
 //  TDDRecipe
 //
-//  Created by junwoo on 2017. 9. 12..
+//  Created by junwoo on 2017. 9. 13..
 //  Copyright © 2017년 junwoo. All rights reserved.
 //
 
@@ -15,8 +15,9 @@ class ItemManagerTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
+    
     sut = ItemManager()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
   }
   
   override func tearDown() {
@@ -24,61 +25,85 @@ class ItemManagerTests: XCTestCase {
     super.tearDown()
   }
   
-  //처음에 0개
-  func test_Item_Initially_IsZero() {
-    XCTAssertEqual(sut.itemCount, 0)
+  //todocount
+  func test_ToDoCount_Initially_IsZero() {
+    
+    XCTAssertEqual(sut.toDoCount, 0)
   }
   
-  //추가하면 1개씩 증가
-  func test_AddItem_IncreasesCardCountToOne() {
-    sut.add(Item(url: ""))
-    XCTAssertEqual(sut.itemCount, 1)
+  //donecount
+  func test_DoneCount_Initially_IsZero() {
+    
+    XCTAssertEqual(sut.doneCount, 0)
   }
   
-  //추가한 아이템이 맞는지 확인
+  //func add
+  func test_AddItem_IncreasesToDoCountToOne() {
+    sut.add(ToDoItem(title: ""))
+    
+    XCTAssertEqual(sut.toDoCount, 1)
+  }
+  
+  //func itemat
   func test_ItemAt_AfterAddingAnItem_ReturnsThatItem() {
-    let item = Item(url: "Foo")
+    let item = ToDoItem(title: "Foo")
     sut.add(item)
+    
     let returnedItem = sut.item(at: 0)
     
-    XCTAssertEqual(returnedItem.url, item.url)
+    XCTAssertEqual(returnedItem.title, item.title)
   }
   
-  //체크시 1개씩 감소
-  func test_CheckItemAt_ChangesCount() {
-    sut.add(Item(url: ""))
-    sut.checkItem(at: 0)
+  //func checkitemat
+  func test_checkItemAt_ChangesCounts() {
+    sut.add(ToDoItem(title: ""))
     
-    XCTAssertEqual(sut.itemCount, 0)
+    sut.checkItem(at: 0)
+    XCTAssertEqual(sut.toDoCount, 0)
+    XCTAssertEqual(sut.doneCount, 1)
   }
   
-  //체크시 삭제
-  func test_CheckItemAt_RemovesItFromItems() {
-    let first = Item(url: "first.com")
-    let second = Item(url: "second.com")
+  //func checkitemat
+  func test_CheckItemAt_RemoveItFromToDoItems() {
+    let first = ToDoItem(title: "First")
+    let second = ToDoItem(title: "Second")
     sut.add(first)
     sut.add(second)
     
     sut.checkItem(at: 0)
-    XCTAssertEqual(sut.item(at: 0).url, "second.com")
+    
+    XCTAssertEqual(sut.item(at: 0).title, "Second")
   }
   
-  //한번에 모두 삭제기능
-  func test_RemoveAll_ResultsInCountsBeZero() {
-    sut.add(Item(url: "test1.com"))
-    sut.add(Item(url: "test2.com"))
+  //func doneitemat
+  func test_DoneItemAt_ReturnsCheckedItem() {
+    let item = ToDoItem(title: "Foo")
+    sut.add(item)
+    
+    sut.checkItem(at: 0)
+    let returnedItem = sut.doneItem(at: 0)
+    
+    XCTAssertEqual(returnedItem.title, item.title)
+  }
+  
+  //func removeall
+  func test_RemoveAll_ResultsCountsBeZero() {
+    sut.add(ToDoItem(title: "Foo"))
+    sut.add(ToDoItem(title: "Bar"))
     sut.checkItem(at: 0)
     
-    XCTAssertEqual(sut.itemCount, 1)
+    XCTAssertEqual(sut.toDoCount, 1)
+    XCTAssertEqual(sut.doneCount, 1)
     
     sut.removeAll()
-    XCTAssertEqual(sut.itemCount, 0)
+    
   }
   
-  func test_Add_WhenItemIsAlreadyAdded_DoesNotIncreaseCount() {
-    sut.add(Item(url: "test.com"))
-    sut.add(Item(url: "test.com"))
+  //func add 수정
+  func test_Add_WhenItemsAlreadyAdded_DoesNotIncreaseCount() {
+    sut.add(ToDoItem(title: "Foo"))
+    sut.add(ToDoItem(title: "Foo"))
     
-    XCTAssertEqual(sut.itemCount, 1)
+    XCTAssertEqual(sut.toDoCount, 1)
   }
 }
