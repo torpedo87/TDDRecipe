@@ -11,9 +11,21 @@ import XCTest
 
 class ItemCellTests: XCTestCase {
   
+  var tableView: UITableView!
+  let dataSource = FakeDataSource()
+  var cell: ItemCell!
+  
   override func setUp() {
     super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    let controller = ItemListViewController()
+    _ = controller.view
+    
+    tableView = controller.tableView
+    tableView.dataSource = dataSource
+    
+    //dequeue 호출
+    cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell
   }
   
   override func tearDown() {
@@ -23,16 +35,45 @@ class ItemCellTests: XCTestCase {
   
   //titlelabel
   func test_HasNameLabel() {
-    let controller = ItemListViewController()
-    _ = controller.view
-    
-    let tableView = controller.tableView
-    let dataSource = FakeDataSource()
-    tableView?.dataSource = dataSource
-    
-    let cell = tableView?.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell
     
     XCTAssertNotNil(cell.titleLabel)
+  }
+  
+  //locationlabel
+  func test_HasLocationLabel() {
+    
+    XCTAssertNotNil(cell.locationLabel)
+  }
+  
+  //datelabel
+  func test_HasDateLabel() {
+    XCTAssertNotNil(cell.dateLabel)
+  }
+  
+  //label text
+  func test_ConfigCell_SetsLabelTexts() {
+    let location = Location(name: "Bar")
+    let item = ToDoItem(title: "Foo", itemDescription: nil, timestamp: 1456150025, location: location)
+    cell.configCell(with: item)
+    
+    XCTAssertEqual(cell.titleLabel.text, "Foo")
+    XCTAssertEqual(cell.locationLabel.text, "Bar")
+    XCTAssertEqual(cell.dateLabel.text, "02/22/2016")
+  }
+  
+  //체크된 item의 configcell (title 줄긋기, location nil, date nil)
+  func test_Title_WhenItemIsChecked_IsStrokeThrough() {
+    let location = Location(name: "Bar")
+    let item = ToDoItem(title: "Foo", itemDescription: nil, timestamp: 1456150025, location: location)
+    
+    cell.configCell(with: item, checked: true)
+    
+    //줄그어진 string
+    let attributedString = NSAttributedString(string: "Foo", attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+    
+    XCTAssertEqual(cell.titleLabel.attributedText, attributedString)
+    XCTAssertNil(cell.locationLabel.text)
+    XCTAssertNil(cell.dateLabel.text)
   }
 }
 

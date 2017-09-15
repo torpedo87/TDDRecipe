@@ -71,7 +71,12 @@
 
 ## ItemCell
 - titleLabel
-- 
+- locationLabel
+- datelabel
+- configcell for unchecked item
+- configcell for checked item
+
+## DetailViewController
 
 
 
