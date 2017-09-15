@@ -16,6 +16,7 @@ class ItemListViewController: UIViewController {
     super.viewDidLoad()
     tableView = UITableView()
     dataProvider = ItemListDataProvider()
+    tableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
     
     tableView.dataSource = dataProvider
     tableView.delegate = dataProvider

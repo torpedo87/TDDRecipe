@@ -11,20 +11,20 @@
 # architecture
 
 ## Model
-### ToDoItem
-### Location
-### ItemManager
+- ToDoItem
+- Location
+- ItemManager
 
 ## View
-### ToDoItemCell
+- ToDoItemCell
 
 ## Controller
-### ListVC
-### TaskDetailVC
-### TaskInputVC
+- ListVC
+- TaskDetailVC
+- TaskInputVC
 
 ## Helper
-### DataProvider
+- DataProvider
 
 
 # tdd 적용 순서
@@ -48,6 +48,7 @@
 - func itemAt
 - toDoItems
 - func checkItemAt
+- func uncheckitemat
 - func doneItemAt
 - doneItems
 - Equatable (ToDoItem)
@@ -57,5 +58,24 @@
 - tableView
 - datasource
 - delegate
+
+## ItemListDataProvider
+- numberofsections = 2
+- numberofrowsinfirstsection = itemmanager.todocount
+- numberofrowsinsecondsection = itemmanager.donecount
+- cellforrowat return custom cell
+- itemcell dequeue
+- itemcell configcell
+- deletebutton
+- check, uncheck event
+
+## ItemCell
+- titleLabel
+- 
+
+
+
+
+
 
 

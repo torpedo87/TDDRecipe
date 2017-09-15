@@ -19,6 +19,9 @@
 		4869DDD11F6A5E7900FE25B8 /* ItemListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */; };
 		4869DDD31F6A5E8900FE25B8 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */; };
 		4869DDD51F6A6EF200FE25B8 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */; };
+		4869DDD71F6A79EF00FE25B8 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD61F6A79EF00FE25B8 /* ItemListDataProviderTests.swift */; };
+		4869DDD91F6A823600FE25B8 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDD81F6A823600FE25B8 /* ItemCell.swift */; };
+		4869DDDB1F6BA68B00FE25B8 /* ItemCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4869DDDA1F6BA68B00FE25B8 /* ItemCellTests.swift */; };
 		97A30E099B651130A9636612 /* Pods_TDDRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */; };
 		B55FDF596FA6027C3DE2EB12 /* Pods_TDDRecipeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20D7129BA2C52900E3FC995 /* Pods_TDDRecipeTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,9 @@
 		4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewControllerTests.swift; sourceTree = "<group>"; };
 		4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataProvider.swift; sourceTree = "<group>"; };
+		4869DDD61F6A79EF00FE25B8 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataProviderTests.swift; sourceTree = "<group>"; };
+		4869DDD81F6A823600FE25B8 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		4869DDDA1F6BA68B00FE25B8 /* ItemCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellTests.swift; sourceTree = "<group>"; };
 		629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDDRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		888BC648078B87376857867C /* Pods-TDDRecipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipeTests/Pods-TDDRecipeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88B18E8C3ED2AE622856623E /* Pods-TDDRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipe/Pods-TDDRecipe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 			children = (
 				4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */,
 				4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */,
+				4869DDD81F6A823600FE25B8 /* ItemCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */,
+				4869DDD61F6A79EF00FE25B8 /* ItemListDataProviderTests.swift */,
+				4869DDDA1F6BA68B00FE25B8 /* ItemCellTests.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -398,6 +407,7 @@
 				4869DDD51F6A6EF200FE25B8 /* ItemListDataProvider.swift in Sources */,
 				4869DDD31F6A5E8900FE25B8 /* ItemListViewController.swift in Sources */,
 				48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */,
+				4869DDD91F6A823600FE25B8 /* ItemCell.swift in Sources */,
 				4869DDC71F691EFE00FE25B8 /* Location.swift in Sources */,
 				4869DDC51F691C0400FE25B8 /* ToDoItem.swift in Sources */,
 			);
@@ -407,6 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4869DDDB1F6BA68B00FE25B8 /* ItemCellTests.swift in Sources */,
+				4869DDD71F6A79EF00FE25B8 /* ItemListDataProviderTests.swift in Sources */,
 				4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */,
 				4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */,
 				4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */,
