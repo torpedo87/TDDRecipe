@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4803AF0A1F6BCE5900C9A59E /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF091F6BCE5900C9A59E /* DetailViewControllerTests.swift */; };
+		4803AF0C1F6BCF2800C9A59E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF0B1F6BCF2800C9A59E /* DetailViewController.swift */; };
+		4803AF101F6FB24900C9A59E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4803AF0F1F6FB24900C9A59E /* MapKit.framework */; };
 		48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262E9E1F6683C9004B6F01 /* AppDelegate.swift */; };
 		48262EA61F6683C9004B6F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA51F6683C9004B6F01 /* Assets.xcassets */; };
 		48262EA91F6683C9004B6F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA71F6683C9004B6F01 /* LaunchScreen.storyboard */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		15F029473C8838CFB25D1B1D /* Pods-TDDRecipeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipeTests/Pods-TDDRecipeTests.release.xcconfig"; sourceTree = "<group>"; };
 		3EF7E40A47CE2B563445536C /* Pods-TDDRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDDRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TDDRecipe/Pods-TDDRecipe.release.xcconfig"; sourceTree = "<group>"; };
+		4803AF091F6BCE5900C9A59E /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		4803AF0B1F6BCF2800C9A59E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4803AF0F1F6FB24900C9A59E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		48262E9B1F6683C9004B6F01 /* TDDRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48262E9E1F6683C9004B6F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48262EA51F6683C9004B6F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4803AF101F6FB24900C9A59E /* MapKit.framework in Frameworks */,
 				97A30E099B651130A9636612 /* Pods_TDDRecipe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +160,7 @@
 				4869DDD21F6A5E8900FE25B8 /* ItemListViewController.swift */,
 				4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */,
 				4869DDD81F6A823600FE25B8 /* ItemCell.swift */,
+				4803AF0B1F6BCF2800C9A59E /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 				4869DDD01F6A5E7900FE25B8 /* ItemListViewControllerTests.swift */,
 				4869DDD61F6A79EF00FE25B8 /* ItemListDataProviderTests.swift */,
 				4869DDDA1F6BA68B00FE25B8 /* ItemCellTests.swift */,
+				4803AF091F6BCE5900C9A59E /* DetailViewControllerTests.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -170,6 +179,7 @@
 		8CE91B60D628F8FE84F0A76F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4803AF0F1F6FB24900C9A59E /* MapKit.framework */,
 				629661B685DDE58E58B05AFB /* Pods_TDDRecipe.framework */,
 				D20D7129BA2C52900E3FC995 /* Pods_TDDRecipeTests.framework */,
 			);
@@ -245,6 +255,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = TM6U8P8E5J;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					48262EAE1F6683CA004B6F01 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -410,6 +425,7 @@
 				4869DDD91F6A823600FE25B8 /* ItemCell.swift in Sources */,
 				4869DDC71F691EFE00FE25B8 /* Location.swift in Sources */,
 				4869DDC51F691C0400FE25B8 /* ToDoItem.swift in Sources */,
+				4803AF0C1F6BCF2800C9A59E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +437,7 @@
 				4869DDD71F6A79EF00FE25B8 /* ItemListDataProviderTests.swift in Sources */,
 				4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */,
 				4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */,
+				4803AF0A1F6BCE5900C9A59E /* DetailViewControllerTests.swift in Sources */,
 				4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */,
 				4869DDD11F6A5E7900FE25B8 /* ItemListViewControllerTests.swift in Sources */,
 			);
