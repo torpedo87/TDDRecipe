@@ -77,7 +77,25 @@
 - configcell for checked item
 
 ## DetailViewController
+- titlelabel
+- locationlabel
+- datelabel
+- descriptionlabel
+- mapview
+- label.text
+- mapview.region
+- func check
 
+## InputViewController
+- titletextfield
+- datetextfield
+- locationtextfield
+- addresstextfield
+- descriptiontextfield
+- savebutton
+- cancelbutton
+- geocoder
+- savebutton과 func save 연결
 
 
 

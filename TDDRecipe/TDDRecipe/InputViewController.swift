@@ -13,6 +13,31 @@ class InputViewController: UIViewController {
   
   var didSetupConstraints = false
   
+  var titleLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Title"
+    return label
+  }()
+  var dateLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Date"
+    return label
+  }()
+  var locationLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Location"
+    return label
+  }()
+  var addressLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Address"
+    return label
+  }()
+  var descriptionLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Description"
+    return label
+  }()
   var titleTextField: UITextField = {
     let textField = UITextField()
     return textField
@@ -54,6 +79,11 @@ class InputViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    view.addSubview(titleLabel)
+    view.addSubview(dateLabel)
+    view.addSubview(locationLabel)
+    view.addSubview(addressLabel)
+    view.addSubview(descriptionLabel)
     view.addSubview(titleTextField)
     view.addSubview(dateTextField)
     view.addSubview(locationTextField)
@@ -70,8 +100,81 @@ class InputViewController: UIViewController {
   
   override func updateViewConstraints() {
     if !didSetupConstraints {
+      titleLabel.snp.makeConstraints { make in
+        make.left.top.equalTo(self.view).offset(10)
+        make.height.equalTo(50)
+        make.centerY.equalTo(titleTextField)
+      }
+      titleTextField.snp.makeConstraints { make in
+        make.right.equalTo(self.view).offset(-10)
+        make.top.equalTo(self.view).offset(10)
+        make.left.equalTo(titleLabel.snp.right).offset(10)
+        make.height.equalTo(50)
+        make.width.equalTo(300)
+      }
+      dateLabel.snp.makeConstraints { make in
+        make.left.equalTo(self.view).offset(10)
+        make.top.equalTo(titleLabel.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.centerY.equalTo(dateTextField)
+      }
+      dateTextField.snp.makeConstraints { make in
+        make.left.equalTo(dateLabel.snp.right).offset(10)
+        make.top.equalTo(titleTextField.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.width.equalTo(300)
+      }
       
+      locationLabel.snp.makeConstraints { make in
+        make.left.equalTo(self.view).offset(10)
+        make.top.equalTo(dateLabel.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.centerY.equalTo(locationTextField)
+      }
+      locationTextField.snp.makeConstraints { make in
+        make.left.equalTo(locationLabel.snp.right).offset(10)
+        make.top.equalTo(dateTextField.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.width.equalTo(300)
+      }
       
+      addressLabel.snp.makeConstraints { make in
+        make.left.equalTo(self.view).offset(10)
+        make.top.equalTo(locationLabel.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.centerY.equalTo(addressTextField)
+      }
+      addressTextField.snp.makeConstraints { make in
+        make.left.equalTo(addressLabel.snp.right).offset(10)
+        make.top.equalTo(locationTextField.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.width.equalTo(300)
+      }
+      
+      descriptionLabel.snp.makeConstraints { make in
+        make.left.equalTo(self.view).offset(10)
+        make.top.equalTo(addressLabel.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.centerY.equalTo(descriptionTextField)
+      }
+      descriptionTextField.snp.makeConstraints { make in
+        make.left.equalTo(descriptionLabel.snp.right).offset(10)
+        make.top.equalTo(addressTextField.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.width.equalTo(300)
+      }
+      cancelButton.snp.makeConstraints { make in
+        make.left.equalTo(self.view).offset(10)
+        make.top.equalTo(descriptionLabel.snp.bottom).offset(10)
+        make.height.equalTo(50)
+        make.centerY.equalTo(dateTextField)
+        make.width.equalTo(saveButton)
+      }
+      saveButton.snp.makeConstraints { make in
+        make.left.equalTo(cancelButton.snp.right).offset(50)
+        make.top.equalTo(descriptionTextField.snp.bottom).offset(10)
+        make.height.equalTo(50)
+      }
       
       didSetupConstraints = true
     }

@@ -56,6 +56,11 @@ class DetailViewControllerTests: XCTestCase {
     XCTAssertNotNil(sut.mapView)
   }
   
+  //checkbutton
+  func test_HasCheckButton() {
+    XCTAssertNotNil(sut.checkButton)
+  }
+  
   //label.text, mapview.region
   func test_SettingItemInfo_SetsTextsToLabels() {
     let coordinate = CLLocationCoordinate2DMake(51.2277, 6.7735)
@@ -99,6 +104,17 @@ class DetailViewControllerTests: XCTestCase {
     
     XCTAssertEqual(itemManager.toDoCount, 0)
     XCTAssertEqual(itemManager.doneCount, 1)
+  }
+  
+  //checkbutton 과 func checkitem 연결
+  func test_CheckButtonHasCheckItemAction() {
+    let checkButton: UIButton = sut.checkButton
+    
+    guard let actions = checkButton.actions(forTarget: sut, forControlEvent: .touchUpInside) else {
+      XCTFail(); return
+    }
+    
+    XCTAssertTrue(actions.contains("checkItem"))
   }
   
 }

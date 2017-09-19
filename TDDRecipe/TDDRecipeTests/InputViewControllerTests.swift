@@ -26,6 +26,31 @@ class InputViewControllerTests: XCTestCase {
     super.tearDown()
   }
   
+  func test_HasTitleLabel() {
+    
+    XCTAssertNotNil(sut.titleLabel)
+  }
+  
+  func test_HasDateLabel() {
+    
+    XCTAssertNotNil(sut.dateLabel)
+  }
+  
+  func test_HasLocationLabel() {
+    
+    XCTAssertNotNil(sut.locationLabel)
+  }
+  
+  func test_HasAddressLabel() {
+    
+    XCTAssertNotNil(sut.addressLabel)
+  }
+  
+  func test_HasDescriptionLabel() {
+    
+    XCTAssertNotNil(sut.descriptionLabel)
+  }
+  
   //title
   func test_HasTitleTextField() {
     XCTAssertNotNil(sut.titleTextField)
@@ -102,6 +127,10 @@ class InputViewControllerTests: XCTestCase {
     }
     
     XCTAssertTrue(actions.contains("save"))
+  }
+  
+  func test_Geocoder_FetchesCoordinates() {
+    
   }
 
 }

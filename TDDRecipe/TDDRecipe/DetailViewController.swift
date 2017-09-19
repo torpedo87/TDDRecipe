@@ -33,6 +33,10 @@ class DetailViewController: UIViewController {
     var view = MKMapView()
     return view
   }()
+  var checkButton: UIButton = {
+    let button = UIButton()
+    return button
+  }()
   
   var itemInfo: (ItemManager, Int)?
   let dateFormatter: DateFormatter = {
@@ -43,11 +47,14 @@ class DetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.addSubview(mapView)
-    self.view.addSubview(titleLabel)
-    self.view.addSubview(locationLabel)
-    self.view.addSubview(dateLabel)
-    self.view.addSubview(descriptionLabel)
+    view.addSubview(mapView)
+    view.addSubview(titleLabel)
+    view.addSubview(locationLabel)
+    view.addSubview(dateLabel)
+    view.addSubview(descriptionLabel)
+    view.addSubview(checkButton)
+    
+    checkButton.addTarget(self, action: #selector(checkItem), for: .touchUpInside)
 
     view.setNeedsUpdateConstraints()
 
@@ -57,32 +64,38 @@ class DetailViewController: UIViewController {
     if !didSetupConstraints {
       
       mapView.snp.makeConstraints { make in
-        make.height.equalTo(100)
-        make.width.equalTo(200)
-        make.center.equalTo(self.view)
+        make.top.equalTo(self.view).offset(50)
+        make.height.equalTo(200)
+        make.left.equalTo(self.view).offset(50)
+        make.right.equalTo(self.view).offset(-50)
+        make.centerX.equalTo(self.view)
       }
       titleLabel.snp.makeConstraints { make in
         make.height.equalTo(50)
-        make.width.equalTo(self.view)
-        make.top.equalTo(mapView.snp.bottom)
+        make.left.right.width.equalTo(mapView)
+        make.centerX.equalTo(self.view)
+        make.top.equalTo(mapView.snp.bottom).offset(10)
       }
       
       dateLabel.snp.makeConstraints { make in
-        make.height.equalTo(50)
-        make.width.equalTo(self.view)
-        make.top.equalTo(titleLabel.snp.bottom)
+        make.height.width.centerX.equalTo(titleLabel)
+        make.top.equalTo(titleLabel.snp.bottom).offset(10)
       }
       
       locationLabel.snp.makeConstraints { make in
-        make.height.equalTo(50)
-        make.width.equalTo(self.view)
-        make.top.equalTo(dateLabel.snp.bottom)
+        make.height.width.centerX.equalTo(dateLabel)
+        make.top.equalTo(dateLabel.snp.bottom).offset(10)
       }
       
       descriptionLabel.snp.makeConstraints { make in
-        make.height.equalTo(50)
-        make.width.equalTo(self.view)
-        make.top.equalTo(locationLabel.snp.bottom)
+        make.width.centerX.equalTo(locationLabel)
+        make.height.equalTo(150)
+        make.top.equalTo(locationLabel.snp.bottom).offset(10)
+      }
+      
+      checkButton.snp.makeConstraints { make in
+        make.height.width.centerX.equalTo(locationLabel)
+        make.top.equalTo(descriptionLabel.snp.bottom).offset(10)
       }
       
       didSetupConstraints = true

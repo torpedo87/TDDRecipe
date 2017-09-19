@@ -10,9 +10,19 @@ import UIKit
 
 class ItemCell: UITableViewCell {
   
-  var titleLabel: UILabel!
-  var locationLabel:  UILabel!
-  var dateLabel: UILabel!
+  var titleLabel: UILabel = {
+    let label = UILabel()
+    return label
+  }()
+  var locationLabel:  UILabel = {
+    let label = UILabel()
+    return label
+  }()
+  var dateLabel: UILabel = {
+    let label = UILabel()
+    return label
+  }()
+  
   lazy var dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -21,16 +31,7 @@ class ItemCell: UITableViewCell {
   
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    titleLabel = UILabel()
-    locationLabel = UILabel()
-    dateLabel = UILabel()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
-  
-  override func layoutSubviews() {
+    
     self.contentView.addSubview(titleLabel)
     self.contentView.addSubview(locationLabel)
     self.contentView.addSubview(dateLabel)
@@ -38,19 +39,24 @@ class ItemCell: UITableViewCell {
     titleLabel.snp.makeConstraints { make in
       make.width.equalTo(100)
       make.height.equalTo(50)
-      make.left.top.equalTo(self.contentView)
+      make.left.top.equalTo(self.contentView).offset(10)
     }
     
     locationLabel.snp.makeConstraints { make in
-      make.top.equalTo(titleLabel.snp.bottom)
+      make.top.equalTo(titleLabel.snp.bottom).offset(5)
       make.width.equalTo(100)
-      make.left.bottom.equalTo(self.contentView)
+      make.centerX.equalTo(titleLabel)
     }
     
     dateLabel.snp.makeConstraints { make in
-      make.top.bottom.equalTo(self.contentView)
-      make.rightMargin.equalTo(-10)
+      make.width.equalTo(100)
+      make.right.equalTo(self.contentView).offset(-10)
+      make.center.equalTo(self.contentView)
     }
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
   }
   
   func configCell(with item: ToDoItem, checked: Bool = false) {
