@@ -9,22 +9,37 @@
 import UIKit
 
 class ItemListViewController: UIViewController {
-  var tableView: UITableView!
-  var dataProvider: (UITableViewDataSource & UITableViewDelegate)!
+  
+  var didSetupConstraints = false
+  
+  var tableView: UITableView = {
+    let tabelView = UITableView()
+    return tabelView
+  }()
+  var dataProvider: (UITableViewDataSource & UITableViewDelegate) = {
+    let dataProvider = ItemListDataProvider()
+    return dataProvider
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView = UITableView()
-    dataProvider = ItemListDataProvider()
-    tableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
     
+    tableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
     tableView.dataSource = dataProvider
     tableView.delegate = dataProvider
+    view.addSubview(tableView)
     
-    self.view.addSubview(tableView)
-    
-    tableView.snp.makeConstraints { (make) -> Void in
-      make.edges.equalTo(self.view)
+  }
+  
+  override func updateViewConstraints() {
+    if !didSetupConstraints {
+      
+      tableView.snp.makeConstraints { make in
+        make.edges.equalTo(self.view)
+      }
+      
+      didSetupConstraints = true
     }
+    super.updateViewConstraints()
   }
 }

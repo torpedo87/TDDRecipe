@@ -10,6 +10,8 @@
 		4803AF0A1F6BCE5900C9A59E /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF091F6BCE5900C9A59E /* DetailViewControllerTests.swift */; };
 		4803AF0C1F6BCF2800C9A59E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF0B1F6BCF2800C9A59E /* DetailViewController.swift */; };
 		4803AF101F6FB24900C9A59E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4803AF0F1F6FB24900C9A59E /* MapKit.framework */; };
+		4803AF121F6FBED500C9A59E /* InputViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF111F6FBED500C9A59E /* InputViewControllerTests.swift */; };
+		4803AF141F6FBF4500C9A59E /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF131F6FBF4500C9A59E /* InputViewController.swift */; };
 		48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262E9E1F6683C9004B6F01 /* AppDelegate.swift */; };
 		48262EA61F6683C9004B6F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA51F6683C9004B6F01 /* Assets.xcassets */; };
 		48262EA91F6683C9004B6F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA71F6683C9004B6F01 /* LaunchScreen.storyboard */; };
@@ -45,6 +47,8 @@
 		4803AF091F6BCE5900C9A59E /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		4803AF0B1F6BCF2800C9A59E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4803AF0F1F6FB24900C9A59E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4803AF111F6FBED500C9A59E /* InputViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewControllerTests.swift; sourceTree = "<group>"; };
+		4803AF131F6FBF4500C9A59E /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		48262E9B1F6683C9004B6F01 /* TDDRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48262E9E1F6683C9004B6F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48262EA51F6683C9004B6F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				4869DDD41F6A6EF200FE25B8 /* ItemListDataProvider.swift */,
 				4869DDD81F6A823600FE25B8 /* ItemCell.swift */,
 				4803AF0B1F6BCF2800C9A59E /* DetailViewController.swift */,
+				4803AF131F6FBF4500C9A59E /* InputViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				4869DDD61F6A79EF00FE25B8 /* ItemListDataProviderTests.swift */,
 				4869DDDA1F6BA68B00FE25B8 /* ItemCellTests.swift */,
 				4803AF091F6BCE5900C9A59E /* DetailViewControllerTests.swift */,
+				4803AF111F6FBED500C9A59E /* InputViewControllerTests.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4803AF141F6FBF4500C9A59E /* InputViewController.swift in Sources */,
 				4869DDCD1F6928E300FE25B8 /* ItemManager.swift in Sources */,
 				4869DDD51F6A6EF200FE25B8 /* ItemListDataProvider.swift in Sources */,
 				4869DDD31F6A5E8900FE25B8 /* ItemListViewController.swift in Sources */,
@@ -436,6 +443,7 @@
 				4869DDDB1F6BA68B00FE25B8 /* ItemCellTests.swift in Sources */,
 				4869DDD71F6A79EF00FE25B8 /* ItemListDataProviderTests.swift in Sources */,
 				4869DDCB1F6921FC00FE25B8 /* ItemManagerTests.swift in Sources */,
+				4803AF121F6FBED500C9A59E /* InputViewControllerTests.swift in Sources */,
 				4869DDC91F691FC500FE25B8 /* LocationTests.swift in Sources */,
 				4803AF0A1F6BCE5900C9A59E /* DetailViewControllerTests.swift in Sources */,
 				4869DDC31F691B8300FE25B8 /* ToDoItemTests.swift in Sources */,

@@ -10,23 +10,26 @@ import UIKit
 import MapKit
 
 class DetailViewController: UIViewController {
-  let titleLabel: UILabel = {
+  
+  var didSetupConstraints = false
+  
+  lazy var titleLabel: UILabel = {
     let label = UILabel()
     return label
   }()
-  let locationLabel: UILabel = {
+  lazy var locationLabel: UILabel = {
     let label = UILabel()
     return label
   }()
-  let dateLabel: UILabel = {
+  lazy var dateLabel: UILabel = {
     let label = UILabel()
     return label
   }()
-  let descriptionLabel: UILabel = {
+  lazy var descriptionLabel: UILabel = {
     let label = UILabel()
     return label
   }()
-  let mapView: MKMapView = {
+  lazy var mapView: MKMapView = {
     var view = MKMapView()
     return view
   }()
@@ -45,38 +48,44 @@ class DetailViewController: UIViewController {
     self.view.addSubview(locationLabel)
     self.view.addSubview(dateLabel)
     self.view.addSubview(descriptionLabel)
-    
+
     view.setNeedsUpdateConstraints()
+
   }
   
   override func updateViewConstraints() {
-    mapView.snp.makeConstraints { make in
-      make.height.equalTo(100)
-      make.width.equalTo(200)
-      make.center.equalTo(self.view)
-    }
-    titleLabel.snp.makeConstraints { make in
-      make.height.equalTo(50)
-      make.width.equalTo(self.view)
-      make.top.equalTo(mapView.snp.bottom)
-    }
-    
-    dateLabel.snp.makeConstraints { make in
-      make.height.equalTo(50)
-      make.width.equalTo(self.view)
-      make.top.equalTo(titleLabel.snp.bottom)
-    }
-    
-    locationLabel.snp.makeConstraints { make in
-      make.height.equalTo(50)
-      make.width.equalTo(self.view)
-      make.top.equalTo(dateLabel.snp.bottom)
-    }
-    
-    descriptionLabel.snp.makeConstraints { make in
-      make.height.equalTo(50)
-      make.width.equalTo(self.view)
-      make.top.equalTo(locationLabel.snp.bottom)
+    if !didSetupConstraints {
+      
+      mapView.snp.makeConstraints { make in
+        make.height.equalTo(100)
+        make.width.equalTo(200)
+        make.center.equalTo(self.view)
+      }
+      titleLabel.snp.makeConstraints { make in
+        make.height.equalTo(50)
+        make.width.equalTo(self.view)
+        make.top.equalTo(mapView.snp.bottom)
+      }
+      
+      dateLabel.snp.makeConstraints { make in
+        make.height.equalTo(50)
+        make.width.equalTo(self.view)
+        make.top.equalTo(titleLabel.snp.bottom)
+      }
+      
+      locationLabel.snp.makeConstraints { make in
+        make.height.equalTo(50)
+        make.width.equalTo(self.view)
+        make.top.equalTo(dateLabel.snp.bottom)
+      }
+      
+      descriptionLabel.snp.makeConstraints { make in
+        make.height.equalTo(50)
+        make.width.equalTo(self.view)
+        make.top.equalTo(locationLabel.snp.bottom)
+      }
+      
+      didSetupConstraints = true
     }
     super.updateViewConstraints()
   }
