@@ -96,7 +96,14 @@
 - cancelbutton
 - geocoder
 - savebutton과 func save 연결
+- 비동기 geocoder
 
+## APIClient
+- url
+- token
+- jsondata error 처리
+- dataempty error 처리
+- severside error 처리
 
 
 
