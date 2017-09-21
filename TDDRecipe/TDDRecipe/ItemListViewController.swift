@@ -38,6 +38,8 @@ class ItemListViewController: UIViewController {
     addButton.target = self
     addButton.action = #selector(addItem)
     dataProvider.itemManager = itemManager
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(showDetails(sender:)), name: NSNotification.Name("ItemSelectedNotification"), object: nil)
   }
   
   override func updateViewConstraints() {
@@ -62,6 +64,14 @@ class ItemListViewController: UIViewController {
     let inputViewController = InputViewController()
     inputViewController.itemManager = self.itemManager
     self.present(inputViewController, animated: true, completion: nil)
+  }
+  
+  func showDetails(sender: NSNotification) {
+    guard let index = sender.userInfo!["index"] as? Int else { fatalError() }
+    
+    let nextViewController = DetailViewController()
+    nextViewController.itemInfo = (itemManager, index)
+    navigationController?.pushViewController(nextViewController, animated: true)
   }
   
 }

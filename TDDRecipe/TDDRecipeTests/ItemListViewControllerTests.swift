@@ -76,7 +76,7 @@ class ItemListViewControllerTests: XCTestCase {
   }
   
   //itemManager
-  func testItemListVC_SharesItemManagerWithInputVC() {
+  func test_ItemListVC_SharesItemManagerWithInputVC() {
     
     guard let addButton = sut.navigationItem.rightBarButtonItem else {
       XCTFail(); return
@@ -113,6 +113,40 @@ class ItemListViewControllerTests: XCTestCase {
     XCTAssertTrue(mockTableView.reloadDataGotCalled)
   }
   
+  //notification receiver
+  func testItemSelectedNotification_PushesDetailVC() {
+
+    let mockNavigationController = MockNavigationController(rootViewController: sut)
+    let firstItem = ToDoItem(title: "First")
+    let secondItem = ToDoItem(title: "Second")
+    sut.itemManager.add(firstItem)
+    sut.itemManager.add(secondItem)
+
+    //view hierarchy
+    UIApplication.shared.keyWindow?.rootViewController = mockNavigationController
+
+    //viewdidload
+    _ = sut.view
+
+    //임시 노티 전송
+    NotificationCenter.default.post(name: NSNotification.Name("ItemSelectedNotification"), object: self, userInfo: ["index" : 1])
+
+    guard let detailViewController = mockNavigationController.pushedViewController as? DetailViewController else { XCTFail(); return }
+    
+    guard let detailItemManager = detailViewController.itemInfo?.0 else { XCTFail(); return }
+
+    guard let index = detailViewController.itemInfo?.1 else { XCTFail(); return }
+    
+    //viewdidload
+    _ = detailViewController.view
+
+    //XCTAssertNotNil(detailViewController.titleLabel)
+    XCTAssertTrue(detailItemManager === sut.itemManager)
+    XCTAssertEqual(index, 1)
+    
+    //다 끝나고 viewwillappear 왜 호출되는거지????????
+  }
+  
 }
 
 extension ItemListViewControllerTests {
@@ -124,5 +158,14 @@ extension ItemListViewControllerTests {
       reloadDataGotCalled = true
     }
     
+  }
+  
+  class MockNavigationController: UINavigationController {
+    var pushedViewController: UIViewController?
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+      pushedViewController = viewController
+      super.pushViewController(viewController, animated: animated)
+    }
   }
 }

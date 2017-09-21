@@ -35,11 +35,13 @@
 - timestamp 가 주어졋을때 값 확인
 - Location 이 주어졋을때 값 확인
 - equatable 적용
+- plistDict
 
 ## Location
 - name 이 주어졋을때 값 확인
 - coordinate 가 주어졌을 때 확인
 - equatable 적용
+- serialize
 
 ## ItemManager
 - toDoCount
@@ -61,6 +63,7 @@
 - add button
 - itemManager
 - tableview reloaddata
+- notification receiver
 
 ## ItemListDataProvider
 - numberofsections = 2
@@ -71,6 +74,7 @@
 - itemcell configcell
 - deletebutton
 - check, uncheck event
+- notification sender
 
 ## ItemCell
 - titleLabel
