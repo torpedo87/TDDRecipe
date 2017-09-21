@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
     
     let itemListViewController = ItemListViewController()
-    window?.rootViewController = itemListViewController
+    window?.rootViewController = UINavigationController(rootViewController: itemListViewController)
     window?.makeKeyAndVisible()
     
     return true

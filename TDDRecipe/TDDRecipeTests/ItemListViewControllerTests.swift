@@ -47,4 +47,82 @@ class ItemListViewControllerTests: XCTestCase {
     XCTAssertEqual(sut.tableView.dataSource as? ItemListDataProvider, sut.tableView.delegate as? ItemListDataProvider)
   }
   
+  //add button target
+  func test_ItemListViewController_HasAddBarButtonWithSelfAsTarget() {
+    let target = sut.navigationItem.rightBarButtonItem?.target
+    XCTAssertEqual(target as? UIViewController, sut)
+  }
+  
+  //add button action
+  func test_AddItem_PresentAddItemViewController() {
+    XCTAssertNil(sut.presentedViewController)
+    
+    //view를 띄워야 버튼이 있으므로
+    UIApplication.shared.keyWindow?.rootViewController = sut
+    
+    guard let addButton = sut.navigationItem.rightBarButtonItem else {
+      XCTFail(); return
+    }
+    guard let action = addButton.action else { XCTFail(); return }
+    
+    //버튼 클릭
+    sut.performSelector(onMainThread: action, with: addButton, waitUntilDone: true)
+    
+    XCTAssertNotNil(sut.presentedViewController)
+    XCTAssertTrue(sut.presentedViewController is InputViewController)
+    
+    let inputViewController = sut.presentedViewController as? InputViewController
+    XCTAssertNotNil(inputViewController?.titleTextField)
+  }
+  
+  //itemManager
+  func testItemListVC_SharesItemManagerWithInputVC() {
+    
+    guard let addButton = sut.navigationItem.rightBarButtonItem else {
+      XCTFail(); return
+    }
+    guard let action = addButton.action else { XCTFail(); return }
+    
+    UIApplication.shared.keyWindow?.rootViewController = sut
+    //버튼 클릭
+    sut.performSelector(onMainThread: action, with: addButton, waitUntilDone: true)
+    
+    guard let inputViewController = sut.presentedViewController as? InputViewController else { XCTFail(); return }
+    guard let inputItemManager = inputViewController.itemManager else
+    { XCTFail(); return }
+    XCTAssertTrue(sut.itemManager === inputItemManager)
+  }
+  
+  //itemManager
+  func test_ViewDidLoad_SetsItemManagerToDataProvider() {
+    XCTAssertTrue(sut.itemManager === sut.dataProvider.itemManager)
+  }
+  
+  //tableview reload
+  func test_TableView_WhenAddedItem_ReloadData() {
+    
+    let mockTableView = MockTableView()
+    sut.tableView = mockTableView
+    let item = ToDoItem(title: "Foo")
+    sut.itemManager.add(item)
+    
+    //viewwillappear
+    sut.beginAppearanceTransition(true, animated: true)
+    sut.endAppearanceTransition()
+    
+    XCTAssertTrue(mockTableView.reloadDataGotCalled)
+  }
+  
+}
+
+extension ItemListViewControllerTests {
+  
+  class MockTableView: UITableView {
+    var reloadDataGotCalled: Bool = false
+    
+    override func reloadData() {
+      reloadDataGotCalled = true
+    }
+    
+  }
 }

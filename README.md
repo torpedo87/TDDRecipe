@@ -58,6 +58,9 @@
 - tableView
 - datasource
 - delegate
+- add button
+- itemManager
+- tableview reloaddata
 
 ## ItemListDataProvider
 - numberofsections = 2
@@ -97,6 +100,7 @@
 - geocoder
 - savebutton과 func save 연결
 - 비동기 geocoder
+- func save
 
 ## APIClient
 - url

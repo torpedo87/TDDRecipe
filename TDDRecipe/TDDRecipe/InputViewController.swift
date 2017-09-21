@@ -78,6 +78,7 @@ class InputViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.white
     
     view.addSubview(titleLabel)
     view.addSubview(dateLabel)
@@ -93,6 +94,15 @@ class InputViewController: UIViewController {
     view.addSubview(cancelButton)
     
     saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+    titleTextField.placeholder = "title"
+    dateTextField.placeholder = "date"
+    locationTextField.placeholder = "location"
+    addressTextField.placeholder = "address"
+    descriptionTextField.placeholder = "description"
+    cancelButton.setTitle("Cancel", for: .normal)
+    cancelButton.backgroundColor = UIColor.darkGray
+    saveButton.setTitle("Save", for: .normal)
+    saveButton.backgroundColor = UIColor.red
     
     view.setNeedsUpdateConstraints()
     
@@ -100,80 +110,80 @@ class InputViewController: UIViewController {
   
   override func updateViewConstraints() {
     if !didSetupConstraints {
+      
       titleLabel.snp.makeConstraints { make in
         make.left.top.equalTo(self.view).offset(10)
         make.height.equalTo(50)
-        make.centerY.equalTo(titleTextField)
+        make.width.equalTo(100)
       }
       titleTextField.snp.makeConstraints { make in
         make.right.equalTo(self.view).offset(-10)
         make.top.equalTo(self.view).offset(10)
         make.left.equalTo(titleLabel.snp.right).offset(10)
         make.height.equalTo(50)
-        make.width.equalTo(300)
       }
+      
       dateLabel.snp.makeConstraints { make in
         make.left.equalTo(self.view).offset(10)
         make.top.equalTo(titleLabel.snp.bottom).offset(10)
         make.height.equalTo(50)
-        make.centerY.equalTo(dateTextField)
+        make.width.equalTo(100)
       }
       dateTextField.snp.makeConstraints { make in
-        make.left.equalTo(dateLabel.snp.right).offset(10)
+        make.right.equalTo(self.view).offset(-10)
         make.top.equalTo(titleTextField.snp.bottom).offset(10)
+        make.left.equalTo(dateLabel.snp.right).offset(10)
         make.height.equalTo(50)
-        make.width.equalTo(300)
       }
       
       locationLabel.snp.makeConstraints { make in
         make.left.equalTo(self.view).offset(10)
         make.top.equalTo(dateLabel.snp.bottom).offset(10)
         make.height.equalTo(50)
-        make.centerY.equalTo(locationTextField)
+        make.width.equalTo(100)
       }
       locationTextField.snp.makeConstraints { make in
-        make.left.equalTo(locationLabel.snp.right).offset(10)
+        make.right.equalTo(self.view).offset(-10)
         make.top.equalTo(dateTextField.snp.bottom).offset(10)
+        make.left.equalTo(locationLabel.snp.right).offset(10)
         make.height.equalTo(50)
-        make.width.equalTo(300)
       }
       
       addressLabel.snp.makeConstraints { make in
         make.left.equalTo(self.view).offset(10)
         make.top.equalTo(locationLabel.snp.bottom).offset(10)
         make.height.equalTo(50)
-        make.centerY.equalTo(addressTextField)
+        make.width.equalTo(100)
       }
       addressTextField.snp.makeConstraints { make in
-        make.left.equalTo(addressLabel.snp.right).offset(10)
+        make.right.equalTo(self.view).offset(-10)
         make.top.equalTo(locationTextField.snp.bottom).offset(10)
+        make.left.equalTo(addressLabel.snp.right).offset(10)
         make.height.equalTo(50)
-        make.width.equalTo(300)
       }
       
       descriptionLabel.snp.makeConstraints { make in
         make.left.equalTo(self.view).offset(10)
         make.top.equalTo(addressLabel.snp.bottom).offset(10)
         make.height.equalTo(50)
-        make.centerY.equalTo(descriptionTextField)
+        make.width.equalTo(100)
       }
       descriptionTextField.snp.makeConstraints { make in
-        make.left.equalTo(descriptionLabel.snp.right).offset(10)
+        make.right.equalTo(self.view).offset(-10)
         make.top.equalTo(addressTextField.snp.bottom).offset(10)
+        make.left.equalTo(descriptionLabel.snp.right).offset(10)
         make.height.equalTo(50)
-        make.width.equalTo(300)
       }
       cancelButton.snp.makeConstraints { make in
         make.left.equalTo(self.view).offset(10)
         make.top.equalTo(descriptionLabel.snp.bottom).offset(10)
         make.height.equalTo(50)
-        make.centerY.equalTo(dateTextField)
-        make.width.equalTo(saveButton)
+        make.width.equalTo(150)
       }
       saveButton.snp.makeConstraints { make in
-        make.left.equalTo(cancelButton.snp.right).offset(50)
+        make.left.equalTo(cancelButton.snp.right).offset(5)
         make.top.equalTo(descriptionTextField.snp.bottom).offset(10)
-        make.height.equalTo(50)
+        make.height.width.equalTo(cancelButton)
       }
       
       didSetupConstraints = true
@@ -184,11 +194,9 @@ class InputViewController: UIViewController {
   //입력한 정보를 item 형태로 추가
   func save() {
     
-    //title
     guard let titleString = titleTextField.text,
       titleString.characters.count > 0 else { return }
     
-    //date
     let date: Date?
     if let dateText = self.dateTextField.text,
       dateText.characters.count > 0 {
@@ -197,10 +205,8 @@ class InputViewController: UIViewController {
       date = nil
     }
     
-    //description
     let descriptionString = descriptionTextField.text
     
-    //location, address
     if let locationName = locationTextField.text,
       locationName.characters.count > 0 {
       if let address = addressTextField.text,
@@ -218,11 +224,25 @@ class InputViewController: UIViewController {
             location: Location(
               name: locationName,
               coordinate: placeMark?.location?.coordinate))
-          
           self.itemManager?.add(item)
         }
+      } else {
+        let item = ToDoItem(title: titleString,
+                            itemDescription: descriptionString,
+                            timestamp: date?.timeIntervalSince1970,
+                            location: Location(name: locationName))
+        self.itemManager?.add(item)
       }
+    } else {
+      let item = ToDoItem(title: titleString,
+                          itemDescription: descriptionString,
+                          timestamp: date?.timeIntervalSince1970,
+                          location: nil)
+      self.itemManager?.add(item)
     }
+    
+    self.dismiss(animated: true, completion: nil)
+    
   }
   
 }

@@ -32,9 +32,9 @@ class ItemCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     
-    self.contentView.addSubview(titleLabel)
-    self.contentView.addSubview(locationLabel)
-    self.contentView.addSubview(dateLabel)
+    contentView.addSubview(titleLabel)
+    contentView.addSubview(locationLabel)
+    contentView.addSubview(dateLabel)
     
     titleLabel.snp.makeConstraints { make in
       make.width.equalTo(100)

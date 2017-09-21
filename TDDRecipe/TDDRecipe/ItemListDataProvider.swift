@@ -97,3 +97,11 @@ extension ItemListDataProvider: UITableViewDelegate {
   }
   
 }
+
+extension ItemListDataProvider: ItemManagerSettable {
+  
+}
+
+@objc protocol ItemManagerSettable {
+  var itemManager: ItemManager? { get set }
+}
