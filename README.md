@@ -55,6 +55,7 @@
 - doneItems
 - Equatable (ToDoItem)
 - func removeAll
+- serialize
 
 ## ItemListViewController
 - tableView
