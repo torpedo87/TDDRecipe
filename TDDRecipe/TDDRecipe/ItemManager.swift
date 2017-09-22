@@ -14,6 +14,7 @@ class ItemManager: NSObject {
   var doneCount: Int { return doneItems.count }
   private var toDoItems: [ToDoItem] = []
   private var doneItems: [ToDoItem] = []
+  
   var toDoPathURL: URL {
     let fileURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     
@@ -28,8 +29,10 @@ class ItemManager: NSObject {
   override init() {
     super.init()
     
+    //앱 비활성화되면 저장해라
     NotificationCenter.default.addObserver(self, selector: #selector(save), name: .UIApplicationWillResignActive, object: nil)
     
+    //저장된 기록 가져와서 넣어놓기
     if let nsToDoItems = NSArray(contentsOf: toDoPathURL) {
       
       for dict in nsToDoItems {
@@ -38,6 +41,7 @@ class ItemManager: NSObject {
         }
       }
     }
+    
   }
   
   deinit {
@@ -91,5 +95,6 @@ class ItemManager: NSObject {
     } catch {
       print(error)
     }
+    
   }
 }

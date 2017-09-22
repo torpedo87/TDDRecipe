@@ -93,23 +93,32 @@ class InputViewControllerTests: XCTestCase {
     dateFormatter.dateFormat = "MM/dd/yyyy"
     let date = dateFormatter.date(from: "02/22/2016")!
     let timestamp = date.timeIntervalSince1970
-    sut.titleTextField.text = "Foo"
-    sut.dateTextField.text = dateFormatter.string(from: date)
-    sut.locationTextField.text = "Bar"
-    sut.addressTextField.text = "Infinite Loop 1, Cupertino"
-    sut.descriptionTextField.text = "Baz"
+    
+    let mockSut = MockInputViewController()
+    
+    mockSut.titleTextField.text = "Foo"
+    mockSut.dateTextField.text = dateFormatter.string(from: date)
+    mockSut.locationTextField.text = "Bar"
+    mockSut.addressTextField.text = "Infinite Loop 1, Cupertino"
+    mockSut.descriptionTextField.text = "Baz"
     
     let mockGeocoder = MockGeocoder()
-    sut.geocoder = mockGeocoder
-    sut.itemManager = ItemManager()
-    sut.save()
+    mockSut.geocoder = mockGeocoder
+    mockSut.itemManager = ItemManager()
+    let dismissExpectation = expectation(description: "Dismiss")
+    mockSut.completionHandler = {
+      dismissExpectation.fulfill()
+    }
+    mockSut.save()
     
     placemark = MockPlacemark()
     let coordinate = CLLocationCoordinate2DMake(37.3316851,
                                                 -122.0300674)
     placemark.mockCoordinate = coordinate
     mockGeocoder.completionHandler?([placemark], nil)
-    let item = sut.itemManager?.item(at: 0)
+    waitForExpectations(timeout: 1, handler: nil)
+    
+    let item = mockSut.itemManager?.item(at: 0)
     let testItem = ToDoItem(title: "Foo",
                             itemDescription: "Baz",
                             timestamp: timestamp,
@@ -117,6 +126,8 @@ class InputViewControllerTests: XCTestCase {
                                                coordinate: coordinate))
     
     XCTAssertEqual(item, testItem)
+    
+    mockSut.itemManager?.removeAll()
   }
   
   //savebutton 과 func save 연결
@@ -197,9 +208,11 @@ extension InputViewControllerTests {
   class MockInputViewController: InputViewController {
     
     var dismissGotCalled = false
+    var completionHandler: (() -> Void)?
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
       dismissGotCalled = true
+      completionHandler?()
     }
   }
   

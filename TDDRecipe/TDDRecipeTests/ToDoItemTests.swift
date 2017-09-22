@@ -110,6 +110,7 @@ class ToDoItemTests: XCTestCase {
     XCTAssertTrue(dictionary is [String:Any])
   }
   
+  //plistDict
   func test_CanBeCreatedFromPlistDict() {
     let location = Location(name: "Bar")
     let item = ToDoItem(title: "Foo", itemDescription: "Baz", timestamp: 1.0, location: location)

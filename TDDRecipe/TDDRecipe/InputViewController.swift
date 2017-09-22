@@ -94,6 +94,7 @@ class InputViewController: UIViewController {
     view.addSubview(cancelButton)
     
     saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+    cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
     titleTextField.placeholder = "title"
     dateTextField.placeholder = "date"
     locationTextField.placeholder = "location"
@@ -224,7 +225,12 @@ class InputViewController: UIViewController {
             location: Location(
               name: locationName,
               coordinate: placeMark?.location?.coordinate))
-          self.itemManager?.add(item)
+          
+          DispatchQueue.main.async(execute: {
+            self.itemManager?.add(item)
+            self.dismiss(animated: true, completion: nil)
+          })
+          
         }
       } else {
         let item = ToDoItem(title: titleString,
@@ -232,6 +238,7 @@ class InputViewController: UIViewController {
                             timestamp: date?.timeIntervalSince1970,
                             location: Location(name: locationName))
         self.itemManager?.add(item)
+        dismiss(animated: true, completion: nil)
       }
     } else {
       let item = ToDoItem(title: titleString,
@@ -239,10 +246,15 @@ class InputViewController: UIViewController {
                           timestamp: date?.timeIntervalSince1970,
                           location: nil)
       self.itemManager?.add(item)
+      dismiss(animated: true, completion: nil)
     }
     
-    self.dismiss(animated: true, completion: nil)
+    //self.dismiss(animated: true, completion: nil)
     
+  }
+  
+  func cancel() {
+    dismiss(animated: true, completion: nil)
   }
   
 }

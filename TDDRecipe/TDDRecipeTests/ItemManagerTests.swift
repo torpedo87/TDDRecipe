@@ -109,8 +109,8 @@ class ItemManagerTests: XCTestCase {
     XCTAssertEqual(sut.toDoCount, 1)
   }
   
-  //serialize
-  func test_ToDoItemsGetSerialized() {
+  //plist
+  func test_toDoItemsGetSerialized() {
     var itemManager: ItemManager? = ItemManager()
     
     let firstItem = ToDoItem(title: "First")
@@ -130,4 +130,5 @@ class ItemManagerTests: XCTestCase {
     XCTAssertEqual(itemManager?.item(at: 1), secondItem)
     
   }
+  
 }

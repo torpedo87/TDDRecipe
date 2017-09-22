@@ -16,6 +16,7 @@
 		4803AF181F70EDF800C9A59E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF171F70EDF800C9A59E /* APIClient.swift */; };
 		4803AF1A1F70F0CC00C9A59E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF191F70F0CC00C9A59E /* Token.swift */; };
 		4803AF1C1F722BD800C9A59E /* InitialViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4803AF1B1F722BD800C9A59E /* InitialViewTests.swift */; };
+		48234BC31F749F8400975380 /* TDDRecipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48234BC21F749F8400975380 /* TDDRecipeUITests.swift */; };
 		48262E9F1F6683C9004B6F01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48262E9E1F6683C9004B6F01 /* AppDelegate.swift */; };
 		48262EA61F6683C9004B6F01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA51F6683C9004B6F01 /* Assets.xcassets */; };
 		48262EA91F6683C9004B6F01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48262EA71F6683C9004B6F01 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		48234BC51F749F8400975380 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48262E931F6683C9004B6F01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48262E9A1F6683C9004B6F01;
+			remoteInfo = TDDRecipe;
+		};
 		48262EB01F6683CA004B6F01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48262E931F6683C9004B6F01 /* Project object */;
@@ -57,6 +65,9 @@
 		4803AF171F70EDF800C9A59E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4803AF191F70F0CC00C9A59E /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		4803AF1B1F722BD800C9A59E /* InitialViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewTests.swift; sourceTree = "<group>"; };
+		48234BC01F749F8400975380 /* TDDRecipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDDRecipeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48234BC21F749F8400975380 /* TDDRecipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDDRecipeUITests.swift; sourceTree = "<group>"; };
+		48234BC41F749F8400975380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48262E9B1F6683C9004B6F01 /* TDDRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDDRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48262E9E1F6683C9004B6F01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48262EA51F6683C9004B6F01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		48234BBD1F749F8400975380 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48262E981F6683C9004B6F01 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,11 +121,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48234BC11F749F8400975380 /* TDDRecipeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48234BC21F749F8400975380 /* TDDRecipeUITests.swift */,
+				48234BC41F749F8400975380 /* Info.plist */,
+			);
+			path = TDDRecipeUITests;
+			sourceTree = "<group>";
+		};
 		48262E921F6683C9004B6F01 = {
 			isa = PBXGroup;
 			children = (
 				48262E9D1F6683C9004B6F01 /* TDDRecipe */,
 				48262EB21F6683CA004B6F01 /* TDDRecipeTests */,
+				48234BC11F749F8400975380 /* TDDRecipeUITests */,
 				48262E9C1F6683C9004B6F01 /* Products */,
 				EAF0FC5C53320FAF8E246B1E /* Pods */,
 				8CE91B60D628F8FE84F0A76F /* Frameworks */,
@@ -119,6 +147,7 @@
 			children = (
 				48262E9B1F6683C9004B6F01 /* TDDRecipe.app */,
 				48262EAF1F6683CA004B6F01 /* TDDRecipeTests.xctest */,
+				48234BC01F749F8400975380 /* TDDRecipeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,6 +247,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		48234BBF1F749F8400975380 /* TDDRecipeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48234BC91F749F8400975380 /* Build configuration list for PBXNativeTarget "TDDRecipeUITests" */;
+			buildPhases = (
+				48234BBC1F749F8400975380 /* Sources */,
+				48234BBD1F749F8400975380 /* Frameworks */,
+				48234BBE1F749F8400975380 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48234BC61F749F8400975380 /* PBXTargetDependency */,
+			);
+			name = TDDRecipeUITests;
+			productName = TDDRecipeUITests;
+			productReference = 48234BC01F749F8400975380 /* TDDRecipeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		48262E9A1F6683C9004B6F01 /* TDDRecipe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48262EB81F6683CA004B6F01 /* Build configuration list for PBXNativeTarget "TDDRecipe" */;
@@ -265,10 +312,16 @@
 		48262E931F6683C9004B6F01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = junwoo;
 				TargetAttributes = {
+					48234BBF1F749F8400975380 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = TM6U8P8E5J;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 48262E9A1F6683C9004B6F01;
+					};
 					48262E9A1F6683C9004B6F01 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = TM6U8P8E5J;
@@ -303,11 +356,19 @@
 			targets = (
 				48262E9A1F6683C9004B6F01 /* TDDRecipe */,
 				48262EAE1F6683CA004B6F01 /* TDDRecipeTests */,
+				48234BBF1F749F8400975380 /* TDDRecipeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		48234BBE1F749F8400975380 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48262E991F6683C9004B6F01 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,6 +493,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		48234BBC1F749F8400975380 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48234BC31F749F8400975380 /* TDDRecipeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		48262E971F6683C9004B6F01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -470,6 +539,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		48234BC61F749F8400975380 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48262E9A1F6683C9004B6F01 /* TDDRecipe */;
+			targetProxy = 48234BC51F749F8400975380 /* PBXContainerItemProxy */;
+		};
 		48262EB11F6683CA004B6F01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48262E9A1F6683C9004B6F01 /* TDDRecipe */;
@@ -489,6 +563,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		48234BC71F749F8400975380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TM6U8P8E5J;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TDDRecipeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codesquad.kr.TDDRecipeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TDDRecipe;
+			};
+			name = Debug;
+		};
+		48234BC81F749F8400975380 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TM6U8P8E5J;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = TDDRecipeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = codesquad.kr.TDDRecipeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TDDRecipe;
+			};
+			name = Release;
+		};
 		48262EB61F6683CA004B6F01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -650,6 +776,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		48234BC91F749F8400975380 /* Build configuration list for PBXNativeTarget "TDDRecipeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48234BC71F749F8400975380 /* Debug */,
+				48234BC81F749F8400975380 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		48262E961F6683C9004B6F01 /* Build configuration list for PBXProject "TDDRecipe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

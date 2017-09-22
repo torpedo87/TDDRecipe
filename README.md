@@ -41,7 +41,7 @@
 - name 이 주어졋을때 값 확인
 - coordinate 가 주어졌을 때 확인
 - equatable 적용
-- serialize
+- plistDict
 
 ## ItemManager
 - toDoCount
@@ -55,7 +55,7 @@
 - doneItems
 - Equatable (ToDoItem)
 - func removeAll
-- serialize
+- plistDict
 
 ## ItemListViewController
 - tableView
