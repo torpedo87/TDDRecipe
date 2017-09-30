@@ -107,7 +107,8 @@ class DetailViewController: UIViewController {
     print(#function)
     super.viewWillAppear(animated)
     
-    guard let itemInfo = itemInfo else { return }
+    guard let itemInfo = itemInfo
+      else { fatalError() }
     let item = itemInfo.0.item(at: itemInfo.1)
 
     titleLabel.text = item.title

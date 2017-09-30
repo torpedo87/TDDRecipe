@@ -75,6 +75,7 @@ class ItemListDataProviderTests: XCTestCase {
     tableView.reloadData()
     
     let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+    XCTAssertNotNil(cell)
     XCTAssertTrue(cell is ItemCell)
   }
   

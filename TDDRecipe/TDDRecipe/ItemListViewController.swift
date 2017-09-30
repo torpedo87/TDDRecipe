@@ -40,6 +40,8 @@ class ItemListViewController: UIViewController {
     dataProvider.itemManager = itemManager
     
     NotificationCenter.default.addObserver(self, selector: #selector(showDetails(sender:)), name: NSNotification.Name("ItemSelectedNotification"), object: nil)
+    
+    view.setNeedsUpdateConstraints()
   }
   
   override func updateViewConstraints() {

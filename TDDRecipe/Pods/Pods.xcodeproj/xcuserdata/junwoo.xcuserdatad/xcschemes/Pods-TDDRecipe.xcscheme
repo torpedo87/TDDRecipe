@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "751372AAE2FF47CFEE6F2B6349268377"
+               BlueprintIdentifier = "9831DAFFA7CF541E2743B46F52E31609"
                BuildableName = "Pods_TDDRecipe.framework"
                BlueprintName = "Pods-TDDRecipe"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "751372AAE2FF47CFEE6F2B6349268377"
+            BlueprintIdentifier = "9831DAFFA7CF541E2743B46F52E31609"
             BuildableName = "Pods_TDDRecipe.framework"
             BlueprintName = "Pods-TDDRecipe"
             ReferencedContainer = "container:Pods.xcodeproj">
